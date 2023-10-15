@@ -1,12 +1,14 @@
 plugins {
     id 'com.android.application'
+    // Add the Google services Gradle plugin
+    id("com.google.gms.google-services")
 }
 
 android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.example.helloworld"
+        applicationId "com.example.projetle1"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
@@ -28,6 +30,15 @@ android {
 }
 
 dependencies {
+    // Firestore
+    implementation 'com.google.firebase:firebase-firestore:22.1.1'
+
+    // Other Firebase/Play services deps
+    implementation 'com.google.firebase:firebase-auth:20.0.3'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    // FirebaseUI (for authentication)
+    implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
