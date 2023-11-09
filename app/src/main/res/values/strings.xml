@@ -1,5 +1,8 @@
 <resources>
+
     <string name="app_name">Test</string>
+    <string name="login">Login</string>
+    <string name="Inscription">Inscription</string>
     <string name="nom">Nom</string>
     <string name="prenom">Prenom</string>
     <string name="email">Adresse email</string>
