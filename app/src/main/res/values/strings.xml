@@ -9,4 +9,7 @@
     <string name="telephone">Numero de telephone</string>
     <string name="mdp">Mot de passe</string>
     <string name="cmdp">Confirmation du mot de passe</string>
+    <string name="click_to_login">Appuyer pour login</string>
+    <string name="click_to_inscription">Pas encore de compte? Inscrivez-vous</string>
+
 </resources>

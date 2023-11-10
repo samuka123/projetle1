@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="200dp"
-    android:layout_height="700dp"
-    android:layout_gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,23 +16,6 @@
         tools:layout_editor_absoluteX="280dp"
         tools:layout_editor_absoluteY="346dp" />
 
-    <EditText
-        android:id="@+id/vnom"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/nom"
-        android:inputType="textPersonName"
-        android:textColor="@color/red" />
-
-    <EditText
-        android:id="@+id/vprenom"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/prenom"
-        android:inputType="textPersonName"
-        android:textColor="@color/red" />
 
     <EditText
         android:id="@+id/vemail"
@@ -43,17 +26,10 @@
         android:inputType="textEmailAddress"
         android:textColor="@color/red" />
 
-    <EditText
-        android:id="@+id/vtelephone"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/telephone"
-        android:inputType="number"
-        android:textColor="@color/red" />
+
 
     <EditText
-        android:id="@+id/vmdp"
+        android:id="@+id/mdp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:ems="10"
@@ -61,20 +37,12 @@
         android:inputType="textPassword"
         android:textColor="@color/red" />
 
-    <EditText
-        android:id="@+id/vcmdp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/cmdp"
-        android:inputType="textPassword"
-        android:textColor="@color/red" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log in"
+        android:text="Log out"
         android:layout_marginTop="35dp"
         android:background="@color/red"/>
 
