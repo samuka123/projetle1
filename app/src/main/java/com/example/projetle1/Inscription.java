@@ -30,7 +30,7 @@ public class Inscription extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), Inscription.class);
+            Intent intent = new Intent(getApplicationContext(), login.class);
             startActivity(intent);
             finish();
         }
@@ -74,15 +74,13 @@ public class Inscription extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Inscription.this, "Compte créer.",
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Inscription.this, "Compte créer.", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), login.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(Inscription.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Inscription.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

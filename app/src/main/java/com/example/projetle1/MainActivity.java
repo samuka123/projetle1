@@ -2,6 +2,7 @@ package com.example.projetle1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser user;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.logout);
         textView = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
+
+
         if(user == null){
             Intent intent = new Intent(getApplicationContext(), login.class);
             startActivity(intent);

@@ -1,62 +1,51 @@
-plugins {
-    id 'com.android.application'
-    // Add the Google services Gradle plugin
-    id("com.google.gms.google-services")
-}
+
+apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
-
+    compileSdkVersion 30
     defaultConfig {
-        applicationId "com.example.projetle1"
+        applicationId 'com.example.projetle1'
         minSdkVersion 16
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
+        namespace 'com.example.projetle1'
         multiDexEnabled true
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary true
     }
-
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    namespace 'com.example.projetle1'
 }
 
 dependencies {
     // Firestore
-    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    implementation 'com.google.firebase:firebase-firestore:24.9.1'
 
     // Other Firebase/Play services deps
-
-    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.firebase:firebase-auth:22.2.0'
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
 
     // FirebaseUI (for authentication)
-    implementation("com.google.firebase:firebase-auth")
+    implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
 
     // Support Libs
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.browser:browser:1.0.0'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.browser:browser:1.6.0'
+    implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
 
     // Android architecture components
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.6.2'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-auth:22.2.0'
-    implementation 'com.google.firebase:firebase-database:20.3.0'
-    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.3.0'
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.6.2'
 
     // Third-party libraries
     implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
