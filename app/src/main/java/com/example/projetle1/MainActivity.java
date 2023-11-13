@@ -34,13 +34,11 @@ public class MainActivity extends AppCompatActivity {
         tvContenName=findViewById(R.id.content_name);
 
         if(user == null){
-            // Utilisateur non connecté, rediriger vers l'activité de connexion
             Intent intent = new Intent(getApplicationContext(), Connexion.class);
             startActivity(intent);
             finish();
         }
         else{
-            // Utilisateur connecté, afficher les détails et configurer le BottomNavigationView
             textView.setText(user.getEmail());
 
             mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
@@ -48,12 +46,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         tvContenName.setText(R.string.tv_str_content_home);
                         return true;
-                    case R.id.logout:
-                        tvContenName.setText(R.string.tv_str_logout);
+                    case R.id.account:
+                        tvContenName.setText(R.string.tv_str_account);
                         FirebaseAuth.getInstance().signOut();
                         Intent intent = new Intent(getApplicationContext(), Connexion.class);
                         startActivity(intent);
                         finish();
+                        return true;
+                    case R.id.message:
                         return true;
                 }
 

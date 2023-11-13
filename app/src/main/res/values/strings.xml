@@ -15,5 +15,8 @@
     <string name="tv_str_content_home">Fenêtre de l\\\'accueil</string>
     <string name="tv_str_logout">Logout</string>
     <string name="menu_str_logout">Logout</string>
+    <string name="menu_str_account">account</string>
+    <string name="tv_str_account">Acoount</string>
+    <string name="menu_str_message">Messages</string>
 
 </resources>
