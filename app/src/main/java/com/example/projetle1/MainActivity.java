@@ -1,6 +1,5 @@
 package com.example.projetle1;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -20,12 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tvContenName;
 
-    @SuppressLint({"MissingInflatedId", "NonConstantResourceId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView = findViewById(R.id.user_details);
+
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -38,28 +36,21 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        else{
-            textView.setText(user.getEmail());
 
-            mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-                switch (item.getItemId()){
-                    case R.id.home:
-                        tvContenName.setText(R.string.tv_str_content_home);
-                        return true;
-                    case R.id.account:
-                        tvContenName.setText(R.string.tv_str_account);
-                        FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(getApplicationContext(), Connexion.class);
-                        startActivity(intent);
-                        finish();
-                        return true;
-                    case R.id.message:
-                        return true;
-                }
+        mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
 
-                return false;
-            });
-        }
+            if (itemId == R.id.home) {
+                tvContenName.setText(R.string.tv_str_content_home);
+                return true;
+            } else
+                tvContenName.setText(R.string.tv_str_message);
+                if (itemId == R.id.account) {
+                tvContenName.setText(R.string.tv_str_account);
+                return true;
+            } else return itemId == R.id.message;
+        });
+
     }
 
 }
