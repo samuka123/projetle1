@@ -12,8 +12,9 @@
     <string name="click_to_login">Appuyer pour login</string>
     <string name="click_to_inscription">Pas encore de compte? Inscrivez-vous</string>
     <string name="menu_str_home">Accueil</string>
-    <string name="tv_str_content_home">Fenêtre de l\\\'accueil</string>
-    <string name="tv_str_logout">Logout</string>
-    <string name="menu_str_logout">Logout</string>
-
+    <string name="tv_str_content_home">Menu</string>
+    <string name="menu_str_account">Account</string>
+    <string name="tv_str_account">Account</string>
+    <string name="menu_str_message">Messages</string>
+    <string name="tv_str_message">Messages</string>
 </resources>
