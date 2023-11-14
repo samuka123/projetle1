@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/connexionEmail"
+        android:layout_width="282dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="162dp" />
+
+    <EditText
+        android:id="@+id/connexionMdp"
+        android:layout_width="282dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:hint="@string/mdp"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="259dp" />
+
+    <Button
+        android:id="@+id/connexionLogin"
+        android:layout_width="252dp"
+        android:layout_height="70dp"
+        android:text="Login"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <Button
+        android:id="@+id/connexionMdpForgotten"
+        android:layout_width="183dp"
+        android:layout_height="50dp"
+        android:text="Mot de passe oublie ?"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="475dp" />
+
+    <Button
+        android:id="@+id/connexionInscrition"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:text="Inscription"
+        android:textSize="8dp"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="632dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
