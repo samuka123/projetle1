@@ -16,14 +16,6 @@
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/content_name"
-            android:text="@string/tv_str_content_home"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
 
     </FrameLayout>
 

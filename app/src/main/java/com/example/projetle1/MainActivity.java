@@ -2,7 +2,6 @@ package com.example.projetle1;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,10 +12,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    TextView textView;
     FirebaseUser user;
 
-    private TextView tvContenName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         user = auth.getCurrentUser();
 
         BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
-        tvContenName=findViewById(R.id.content_name);
+
 
         if(user == null){
             Intent intent = new Intent(getApplicationContext(), Connexion.class);
@@ -36,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this,tvContenName);
-
+        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this);
     }
 
 }
