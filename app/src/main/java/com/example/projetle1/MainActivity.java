@@ -45,7 +45,7 @@ WQ                                                                              
                 return true;
             } else
                 tvContenName.setText(R.string.tv_str_message);
-                if (itemId == R.id.account) {
+            if (itemId == R.id.account) {
                 tvContenName.setText(R.string.tv_str_account);
                 return true;
             } else return itemId == R.id.message;
