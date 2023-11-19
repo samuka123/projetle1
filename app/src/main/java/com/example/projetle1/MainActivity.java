@@ -37,7 +37,20 @@ WQ                                                                              
             finish();
         }
 
-        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this);
+        mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.home) {
+                tvContenName.setText(R.string.tv_str_content_home);
+                return true;
+            } else
+                tvContenName.setText(R.string.tv_str_message);
+            if (itemId == R.id.account) {
+                tvContenName.setText(R.string.tv_str_account);
+                return true;
+            } else return itemId == R.id.message;
+        });
+
     }
 
 }
