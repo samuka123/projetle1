@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/association_logo_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/item_action" />
+
+    <TextView
+        android:id="@+id/association_name_id"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="@string/association_name"
+        android:textColor="@color/purple_700"
+        android:textSize="20dp"
+        android:padding="30dp"/>
+
+</LinearLayout>

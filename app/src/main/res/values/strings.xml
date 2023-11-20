@@ -17,4 +17,5 @@
     <string name="tv_str_account">Account</string>
     <string name="menu_str_message">Messages</string>
     <string name="tv_str_message">Messages</string>
+    <string name="association_name">Nom Association</string>
 </resources>

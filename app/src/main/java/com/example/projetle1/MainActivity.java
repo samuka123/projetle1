@@ -17,12 +17,11 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     FirebaseUser user;
 
-    private TextView tvContenName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-WQ                                                                                                                                          setContentView(R.layout.inscription);
+        setContentView(R.layout.inscription);
 
 
         auth = FirebaseAuth.getInstance();
@@ -37,19 +36,7 @@ WQ                                                                              
             finish();
         }
 
-        mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            int itemId = item.getItemId();
-
-            if (itemId == R.id.home) {
-                tvContenName.setText(R.string.tv_str_content_home);
-                return true;
-            } else
-                tvContenName.setText(R.string.tv_str_message);
-            if (itemId == R.id.account) {
-                tvContenName.setText(R.string.tv_str_account);
-                return true;
-            } else return itemId == R.id.message;
-        });
+        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this);
 
     }
 
