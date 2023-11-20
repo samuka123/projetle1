@@ -17,6 +17,7 @@ public class AssociationMain extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
         setContentView(R.layout.activity_association_list);
 
 
@@ -28,7 +29,6 @@ public class AssociationMain extends AppCompatActivity{
         ListView vAssociationList = findViewById(R.id.association_list_id);
         vAssociationList.setAdapter(new AssociationItemAdapter(this, vAssociationArrayList));
 
-        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
         BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this);
     }
 

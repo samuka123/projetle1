@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         user = auth.getCurrentUser();
 
         BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
-        tvContenName=findViewById(R.id.content_name);
 
         if(user == null){
             Intent intent = new Intent(getApplicationContext(), Connexion.class);
