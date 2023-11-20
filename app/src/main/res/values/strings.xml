@@ -10,7 +10,7 @@
     <string name="mdp">Mot de passe</string>
     <string name="cmdp">Confirmation du mot de passe</string>
     <string name="click_to_login">Appuyer pour login</string>
-    <string name="click_to_inscription">Pas encore de compte? Inscrivez-vous</string>
+    <string name="click_to_inscription">Inscrivez-vous</string>
     <string name="menu_str_home">Accueil</string>
     <string name="tv_str_content_home">Menu</string>
     <string name="menu_str_account">Account</string>
@@ -18,4 +18,5 @@
     <string name="menu_str_message">Messages</string>
     <string name="tv_str_message">Messages</string>
     <string name="association_name">Nom Association</string>
+    <string name="mot_de_passe_oublie">Mot de passe oublié?</string>
 </resources>
