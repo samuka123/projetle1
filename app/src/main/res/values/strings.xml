@@ -22,4 +22,6 @@
     <string name="question_compte">N\'avez vous pas un compte?</string>
     <string name="connectez_vous">Avez-vous dèjà un compte?</string>
     <string name="mdp_confirmation">Confirmation mot de passe</string>
+    <string name="btn_association">Association</string>
+    <string name="btn_donation">Donation</string>
 </resources>

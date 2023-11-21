@@ -2,6 +2,7 @@ package com.example.projetle1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
-
         BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
 
         if(user == null){
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this);
+        Log.d("MainActivity", "onCreate: Before initializing BottomNavigationMenu");
+
+        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this,this);
     }
 }

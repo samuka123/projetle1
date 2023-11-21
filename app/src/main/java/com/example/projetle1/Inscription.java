@@ -114,11 +114,6 @@ public class Inscription extends AppCompatActivity {
             return; // Arrêtez l'exécution si db est null
         }
 
-        // Ajoutez une vérification pour db.collection
-        if (mDb.collection("utilisateurInfo") == null) {
-            Log.e("Inscription", "La collection utilisateurInfo est null !");
-            return; // Arrêtez l'exécution si la collection est null
-        }
 
         mDb.collection("utilisateurInfo").document("1")
                 .set(utilisateurInfo)

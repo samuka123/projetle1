@@ -1,5 +1,6 @@
 package com.example.projetle1.AssociationJavaClass;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -13,12 +14,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AssociationMain extends AppCompatActivity{
+    @Override
+    public void onStart() {
+        super.onStart();
+        Intent intent = new Intent(getApplicationContext(), AssociationMain.class);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
         setContentView(R.layout.activity_association_list);
+        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
 
 
         List<AssociationItem> vAssociationArrayList = new ArrayList<>();
@@ -29,7 +37,7 @@ public class AssociationMain extends AppCompatActivity{
         ListView vAssociationList = findViewById(R.id.association_list_id);
         vAssociationList.setAdapter(new AssociationItemAdapter(this, vAssociationArrayList));
 
-        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this);
+        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this,this);
     }
 
 
