@@ -22,9 +22,9 @@ public class AssociationMain extends AppCompatActivity{
 
 
         List<AssociationItem> vAssociationArrayList = new ArrayList<>();
-        vAssociationArrayList.add(new AssociationItem("Action contre la faim"));
-        vAssociationArrayList.add(new AssociationItem("Medecins sans frontieres"));
-        vAssociationArrayList.add(new AssociationItem("Les restos du coeur"));
+        vAssociationArrayList.add(new AssociationItem("Action contre la faim", "https://donner.actioncontrelafaim.org/agir/~mon-don?source=bouton-site&medium=menu"));
+        vAssociationArrayList.add(new AssociationItem("Medecins sans frontieres", "https://soutenir.msf.fr/faire-un-don/~mon-don"));
+        vAssociationArrayList.add(new AssociationItem("Les restos du coeur", "https://dons.restosducoeur.org/particulier/~mon-don?gad_source=1&gclid=CjwKCAiAgeeqBhBAEiwAoDDhn56UOzfol7mVpt9WAWHs7AJtkGmySe0i741oc1ftfA0RqDLFfhH_VhoCDmcQAvD_BwE"));
 
         ListView vAssociationList = findViewById(R.id.association_list_id);
         vAssociationList.setAdapter(new AssociationItemAdapter(this, vAssociationArrayList));
