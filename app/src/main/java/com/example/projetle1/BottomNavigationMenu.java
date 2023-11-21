@@ -2,12 +2,16 @@ package com.example.projetle1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BottomNavigationMenu extends AppCompatActivity {
+
+    Button ButtonDonation;
+
     public static void setupBottomMenu(BottomNavigationView bottomNavigationView, final Activity activity) {
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
