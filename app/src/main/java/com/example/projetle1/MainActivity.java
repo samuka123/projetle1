@@ -9,10 +9,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseUser user;
+
 
 
     @Override
@@ -20,20 +22,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
-        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
 
         if(user == null){
             Intent intent = new Intent(getApplicationContext(), Connexion.class);
             startActivity(intent);
             finish();
         }
-
         BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this);
     }
-
 }
