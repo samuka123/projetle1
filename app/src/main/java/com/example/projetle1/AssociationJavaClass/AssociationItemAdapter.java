@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.example.projetle1.R;
 
@@ -39,7 +40,12 @@ public class AssociationItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view= this.aInflater.inflate(R.layout.activity_association_item, null);
+        view= this.aInflater.inflate(R.layout.fragment_association_item, null);
+
+        AssociationItem vCurrentItem= getItem(i);
+        TextView vAssociationName= view.findViewById(R.id.fragment_association_name_id);
+        vAssociationName.setText(vCurrentItem.getName());
+
         return view;
     }
 }
