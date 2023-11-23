@@ -47,17 +47,17 @@ public class HomeFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
 
         Button btnAssociation = view.findViewById(R.id.btn_association);
-    if (btnAssociation != null){
-        btnAssociation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AssociationMain.class);
-                startActivity(intent);
-            }
-        });
-    }else{
-        Log.e("HomeFragment", "btn_association is null");
-    }
+        if (btnAssociation != null){
+            btnAssociation.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), AssociationMain.class);
+                    startActivity(intent);
+                }
+            });
+        }else{
+            Log.e("HomeFragment", "btn_association is null");
+        }
 
         return view;
     }
