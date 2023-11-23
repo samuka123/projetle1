@@ -6,7 +6,6 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.projetle1.BottomNavigationMenu;
 import com.example.projetle1.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -14,20 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AssociationMain extends AppCompatActivity{
-    @Override
-    public void onStart() {
-        super.onStart();
-        Intent intent = new Intent(getApplicationContext(), AssociationMain.class);
-        startActivity(intent);
-        finish();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_association_list);
-        BottomNavigationView mBottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        setContentView(R.layout.activity_association_list);
 
         List<AssociationItem> vAssociationArrayList = new ArrayList<>();
         vAssociationArrayList.add(new AssociationItem("Action contre la faim"));
@@ -37,7 +28,6 @@ public class AssociationMain extends AppCompatActivity{
         ListView vAssociationList = findViewById(R.id.association_list_id);
         vAssociationList.setAdapter(new AssociationItemAdapter(this, vAssociationArrayList));
 
-        BottomNavigationMenu.setupBottomMenu(mBottomNavigationView,this,this);
     }
 
 

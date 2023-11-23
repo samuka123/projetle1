@@ -29,7 +29,6 @@ public class Inscription extends AppCompatActivity {
     EditText editTextEmail, editTextmdp, editTextmdpConfirmation, editTextNom, editTextPrenom;
     Button buttonInscription;
     FirebaseAuth mAuth;
-
     FirebaseFirestore mDb;
     TextView textView;
 
@@ -103,15 +102,21 @@ public class Inscription extends AppCompatActivity {
             return;
         }
 
+        if (!mdp.equals(mdpconfirmation)){
+            editTextmdpConfirmation.setError("Le mot de passe n'est pas identique");
+            editTextmdpConfirmation.requestFocus();
+            return;
+        }
+
         Map<String,Object> utilisateurInfo = new HashMap<>();
         utilisateurInfo.put("nom",nom);
         utilisateurInfo.put("prenom",prenom);
 
 
-        // Ajoutez une vérification pour db
+        // Vérification connexion à la db
         if (mDb == null) {
             Log.e("Inscription", "L'objet db est null !");
-            return; // Arrêtez l'exécution si db est null
+            return; // Exécution stop si db est null
         }
 
 
@@ -120,7 +125,7 @@ public class Inscription extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                                       Toast.makeText(getApplicationContext(), "The user has been registered ",
+                                       Toast.makeText(getApplicationContext(), "L'utilisateur est enregistré ",
                                 Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), Connexion.class));
                         finish();
@@ -138,8 +143,7 @@ public class Inscription extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(Inscription.this, "Inscription failed.",
+                            Toast.makeText(Inscription.this, "Inscription échoué.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }

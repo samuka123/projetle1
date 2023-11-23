@@ -24,4 +24,6 @@
     <string name="mdp_confirmation">Confirmation mot de passe</string>
     <string name="btn_association">Association</string>
     <string name="btn_donation">Donation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
