@@ -9,20 +9,25 @@
     <Button
         android:id="@+id/btn_profil"
         android:text="@string/btn_profil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="130dp"
+        android:background="@drawable/bouton_rond"
         app:layout_constraintWidth_percent="0.5"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="60dp"/>
+        />
 
     <Button
         android:id="@+id/btn_deconnexion"
         android:text="@string/btn_deconnexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="130dp"
+        android:background="@drawable/bouton_rond"
         app:layout_constraintWidth_percent="0.5"
-        android:layout_margin="100dp"
-        android:layout_marginBottom="40dp"/>
+        />
 
 </FrameLayout>

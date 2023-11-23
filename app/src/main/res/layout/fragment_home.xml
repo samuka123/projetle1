@@ -8,22 +8,24 @@
 
     <Button
         android:id="@+id/btn_association"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="130dp"
+        android:background="@drawable/bouton_rond"
         android:text="@string/btn_association"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:layout_constraintWidth_percent="0.5"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="60dp"/>
+        android:visibility="visible"
+        app:layout_constraintWidth_percent="0.5" />
 
     <Button
         android:id="@+id/btn_donation"
-        android:text="@string/btn_donation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
-        app:layout_constraintWidth_percent="0.5"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
         android:layout_margin="100dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_gravity="center"
+        android:background="@drawable/bouton_rond"
+        android:text="@string/btn_donation"
+        app:layout_constraintWidth_percent="0.5" />
 
 </FrameLayout>
