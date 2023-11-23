@@ -28,4 +28,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_profil">Profil</string>
     <string name="btn_deconnexion">Déconnexion</string>
+    <string name="Update">Mettre à jour</string>
 </resources>

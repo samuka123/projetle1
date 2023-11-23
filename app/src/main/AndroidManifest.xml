@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
-            android:name=".PagePrincipale"
+            android:name=".Profil"
             android:exported="false" />
         <activity
             android:name=".Inscription"
@@ -30,7 +30,6 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".AssociationJavaClass.AssociationMain" />
-
     </application>
 
 </manifest>
