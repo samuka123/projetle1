@@ -34,10 +34,10 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_compte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/Image_Donation1"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                tools:src="@drawable/fui_ic_anonymous_white_24dp" />
 
         </LinearLayout>
 

@@ -31,9 +31,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/Image_Donation4"
-
-        />
+        tools:src="@drawable/image_donation2" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -41,6 +39,6 @@
         android:layout_height="200dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="150dp"
-        android:src="@drawable/Image_Donation3" />
+        tools:src="@drawable/image_donation3" />
 
 </FrameLayout>
