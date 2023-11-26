@@ -6,28 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".CompteFragment">
 
-    <Button
-        android:id="@+id/btn_profil"
-        android:text="@string/btn_profil"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_gravity="top"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="130dp"
-        android:background="@drawable/bouton_rond"
-        app:layout_constraintWidth_percent="0.5"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="581dp"
+        android:background="@drawable/backgroud_violet"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_deconnexion"
-        android:text="@string/btn_deconnexion"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="120dp"
-        android:layout_marginLeft="130dp"
-        android:background="@drawable/bouton_rond"
-        app:layout_constraintWidth_percent="0.5"
-        />
+        <Button
+            android:id="@+id/btn_deconnexion"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bouton_rond"
+            app:icon="@drawable/baseline_logout_24" />
+
+        <Button
+            android:id="@+id/btn_profil"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center|top"
+
+            android:background="@drawable/bouton_rond"
+            android:text="@string/btn_profil"
+            app:layout_constraintWidth_percent="0.5" />
+    </LinearLayout>
 
 </FrameLayout>
