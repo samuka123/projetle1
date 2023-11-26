@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginBottom="581dp"
-            android:background="@drawable/backgroud_violet"
+            android:background="@drawable/backgroud_bleucontrast"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,10 +49,37 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/bouton_rond"
             android:gravity="right"
+            android:text="@string/btn_deconnexion"
             app:icon="@drawable/baseline_logout_24"
             app:layout_constraintEnd_toEndOf="@id/linearLayout2"
-            app:layout_constraintTop_toTopOf="@id/linearLayout2"
-            android:text="@string/btn_deconnexion"/>
+            app:layout_constraintTop_toTopOf="@id/linearLayout2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/backgroud_bleucontrast2"
+            android:orientation="vertical"
+            android:rotation="180"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
