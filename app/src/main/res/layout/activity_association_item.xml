@@ -21,18 +21,6 @@
         android:textSize="20dp"
         android:padding="30dp"/>
 
-    <Button
-        android:id="@+id/btn_ajoutassociation"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="130dp"
-        android:layout_marginBottom="120dp"
-        android:background="@drawable/bouton_rond"
-        android:text="@string/btn_deconnexion"
-        app:iconTint="@color/purple_500"
-        app:layout_constraintWidth_percent="0.5" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"

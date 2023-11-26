@@ -31,7 +31,9 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="250dp"
-        android:src="@drawable/Image_Donation4" />
+        android:src="@drawable/Image_Donation4"
+
+        />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -39,6 +41,6 @@
         android:layout_height="200dp"
         android:layout_marginBottom="150dp"
         android:layout_gravity="bottom"
-        android:src="@drawable/Image_Donation1" />
+        android:src="@drawable/Image_Donation3" />
 
 </FrameLayout>
