@@ -10,9 +10,8 @@
         android:id="@+id/btn_association"
         android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_gravity="top"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="130dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="90dp"
         android:background="@drawable/bouton_rond"
         android:text="@string/btn_association"
         android:visibility="visible"
@@ -22,10 +21,24 @@
         android:id="@+id/btn_donation"
         android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_margin="100dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center"
         android:background="@drawable/bouton_rond"
         android:text="@string/btn_donation"
         app:layout_constraintWidth_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:src="@drawable/Image_Donation4" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginBottom="150dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/Image_Donation1" />
 
 </FrameLayout>
