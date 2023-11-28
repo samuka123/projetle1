@@ -35,7 +35,7 @@ public class CreateAssociation extends AppCompatActivity {
 
         this.aAssociationObject= new AssociationItem();
 
-        this.aCloseButton= findViewById(R.id.close_button);
+        this.aCloseButton= findViewById(R.id.association_close_button);
         this.aButtonChooseImage = findViewById(R.id.button_add_association_image);
 
         this.aAddImage= findViewById(R.id.add_association_imageview);
@@ -73,7 +73,7 @@ public class CreateAssociation extends AppCompatActivity {
             this.aAssociationObject.setLogo(data.getData());
             this.aAddImage.setImageURI(this.aAssociationObject.getLogo());
 
-            // Picasso.with(this).load(selectedImageUri).into(imageView); en ligne
+            //Picasso.with(this).load(selectedImageUri).into(imageView); en ligne
         }
     }
 

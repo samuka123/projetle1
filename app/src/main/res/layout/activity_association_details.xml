@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/association_details_name"
+        android:layout_width="313dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="@string/association_name"
+        android:textColor="@color/purple_700"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/association_details_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/association_details_logo"
+        android:layout_width="231dp"
+        android:layout_height="231dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/item_default"
+        app:layout_constraintBottom_toTopOf="@+id/association_details_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/association_details_description"
+        android:layout_width="444dp"
+        android:layout_height="219dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:padding="30dp"
+        android:text="Courte description"
+        android:textColor="@color/purple_700"
+        android:textSize="22.5dp"
+        app:layout_constraintBottom_toTopOf="@+id/association_details_url"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/association_details_url"
+        android:layout_width="495dp"
+        android:layout_height="54dp"
+        android:autoLink="web"
+        android:gravity="center"
+        android:text="www.urllink.com"
+        android:textSize="22.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="691dp" />
+
+    <ImageButton
+        android:id="@+id/association_details_close_button"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/croix"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

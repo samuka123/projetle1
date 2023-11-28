@@ -2,6 +2,9 @@ package com.example.projetle1.AssociationJavaClass;
 
 import android.net.Uri;
 
+import com.example.projetle1.BuildConfig;
+import com.example.projetle1.R;
+
 public class AssociationItem {
 
     private String aName;
@@ -13,14 +16,14 @@ public class AssociationItem {
         this.aName= "";
         this.aDescription= "";
         this.aUrl= "";
-        this.aLogo=  Uri.parse("file:///android_res/drawable/item_default");
+        this.aLogo= Uri.parse("android.resource://"+ BuildConfig.APPLICATION_ID+"/" + R.drawable.item_default);
     }
 
     public AssociationItem(String pName, String pUrl){
         this.aName= pName;
         this.aDescription= "";
         this.aUrl= pUrl;
-        this.aLogo= Uri.parse("file:///android_res/drawable/item_default");;
+        this.aLogo= Uri.parse("android.resource://"+ BuildConfig.APPLICATION_ID+"/" + R.drawable.item_default);
 
     }
 
