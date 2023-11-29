@@ -50,7 +50,7 @@ public class CreateAssociation extends AppCompatActivity {
         });
 
         aButtonChooseImage.setOnClickListener(v -> {
-            openGallery();
+            //openGallery();
         });
 
         aButtonUpload.setOnClickListener(v -> {

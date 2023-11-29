@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AssociationMain extends AppCompatActivity{
 
-    private Button aAdd;
+     Button aAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
