@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity
-            android:name=".PagePrincipale"
-            android:exported="false" />
+
         <activity
             android:name=".Inscription"
             android:exported="false"

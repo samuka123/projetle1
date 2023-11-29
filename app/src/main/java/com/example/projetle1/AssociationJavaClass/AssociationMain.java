@@ -34,9 +34,18 @@ public class AssociationMain extends AppCompatActivity{
         vAssociationList.setAdapter(new AssociationItemAdapter(this, vAssociationArrayList));
 
         vAssociationList.setClickable(true);
-        /*vAssociationList.setOnClickListener(
-                {
 
+        /*vAssociationList.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(AssociationMain.this,  AssociationDetails.class);
+                intent.putExtra("nom", vAssociationArrayList.get(i));
+                intent.putExtra("image", 2);
+                intent.putExtra("descripton", 3);
+                intent.putExtra("url", 4);
+                startActivity(intent);
+            }
         });*/
 
         //Un appuie sur le bouton ADD ouvre la fenetre de creation d association
