@@ -35,8 +35,8 @@
 
     <EditText
         android:id="@+id/add_association_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="63dp"
         android:layout_margin="30dp"
         android:layout_marginTop="136dp"
         android:hint="Nom de votre association"
@@ -48,8 +48,8 @@
 
     <EditText
         android:id="@+id/add_association_url"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="63dp"
         android:layout_margin="30dp"
         android:hint="Lien url"
         app:layout_constraintBottom_toTopOf="@+id/button_add_association_image"
@@ -57,13 +57,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintVertical_bias="0.844"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/add_association_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="63dp"
         android:layout_margin="30dp"
         android:layout_marginBottom="48dp"
         android:hint="Courte description"
@@ -102,6 +102,7 @@
         android:layout_marginRight="4dp"
         android:scaleType="fitCenter"
         android:src="@drawable/croix"
+        android:contentDescription="close button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />

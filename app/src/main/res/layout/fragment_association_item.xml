@@ -19,7 +19,7 @@
         android:gravity="center"
         android:text="@string/association_name"
         android:textColor="@color/purple_700"
-        android:textSize="20dp"
+        android:textSize="10dp"
         android:padding="30dp"/>
 
 </LinearLayout>
