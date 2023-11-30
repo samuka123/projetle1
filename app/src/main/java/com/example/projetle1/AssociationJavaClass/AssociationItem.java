@@ -2,20 +2,28 @@ package com.example.projetle1.AssociationJavaClass;
 
 import android.net.Uri;
 
+import com.example.projetle1.BuildConfig;
+import com.example.projetle1.R;
+
 public class AssociationItem {
 
     private String aName;
     private String aDescription;
-
     private String aUrl;
-
     private Uri aLogo;
+
+    public AssociationItem(){
+        this.aName= "";
+        this.aDescription= "";
+        this.aUrl= "";
+        this.aLogo= Uri.parse("android.resource://"+ BuildConfig.APPLICATION_ID+"/" + R.drawable.item_default);
+    }
 
     public AssociationItem(String pName, String pUrl){
         this.aName= pName;
         this.aDescription= "";
         this.aUrl= pUrl;
-        this.aLogo= null;
+        this.aLogo= Uri.parse("android.resource://"+ BuildConfig.APPLICATION_ID+"/" + R.drawable.item_default);
 
     }
 
@@ -55,7 +63,7 @@ public class AssociationItem {
     }
 
 
-    //pour convertir la String aLink en lien aUrl
+    //pour convertir une String en lien Url
     public Uri convertToUrl(String pLink){
         return Uri.parse(pLink);
     }

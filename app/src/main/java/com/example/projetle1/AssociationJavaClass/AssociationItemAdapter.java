@@ -1,10 +1,12 @@
 package com.example.projetle1.AssociationJavaClass;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projetle1.R;
@@ -13,24 +15,24 @@ import java.util.List;
 
 public class AssociationItemAdapter extends BaseAdapter {
 
-    private Context aContext;
-    private List<AssociationItem> aAssociationArrayList;
-    private LayoutInflater aInflater;
+    private  Context acontext;
+    private List<AssociationItem> aArrayAssociationList;
+    private LayoutInflater ainflater;
 
-    public AssociationItemAdapter(Context pContext, List<AssociationItem> pAssociationArrayList){
-        this.aContext = pContext;
-        this.aAssociationArrayList= pAssociationArrayList;
-        this.aInflater= LayoutInflater.from(this.aContext);
-    }
+    public AssociationItemAdapter(Context pcontext, List<AssociationItem> pArrayAssociationList){
+        this.acontext= pcontext;
+        this.aArrayAssociationList= pArrayAssociationList;
+        this.ainflater= LayoutInflater.from(acontext);
+     }
 
     @Override
     public int getCount() {
-        return this.aAssociationArrayList.size();
+        return this.aArrayAssociationList.size();
     }
 
     @Override
-    public AssociationItem getItem(int pPosition) {
-        return aAssociationArrayList.get(pPosition);
+    public AssociationItem getItem(int position) {
+        return this.aArrayAssociationList.get(position);
     }
 
     @Override
@@ -40,11 +42,18 @@ public class AssociationItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view= this.aInflater.inflate(R.layout.activity_association_item, null);
 
-        AssociationItem vCurrentItem= getItem(i);
-        TextView vAssociationName= view.findViewById(R.id.association_name_id);
-        vAssociationName.setText(vCurrentItem.getName());
+        view= ainflater.inflate(R.layout.fragment_association_item,null);
+
+        AssociationItem vcurrentItem= getItem(i);
+        String vName= vcurrentItem.getName();
+        Uri vLogo= vcurrentItem.getLogo();
+
+        TextView vNameView= view.findViewById(R.id.fragment_association_name_id);
+        ImageView vLogoView= view.findViewById(R.id.fragment_association_logo_id);
+
+        vNameView.setText(vName);
+        vLogoView.setImageURI(vLogo);
 
         return view;
     }
