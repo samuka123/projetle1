@@ -50,8 +50,8 @@ public class AssociationMain extends AppCompatActivity{
 
         //Un appuie sur le bouton ADD ouvre la fenetre de creation d association
         aAdd.setOnClickListener(v -> {
-            Intent nextActivity = new Intent(getApplicationContext(), CreateAssociation.class);
-            startActivity(nextActivity);
+            Intent intent  = new Intent(getApplicationContext(), CreateAssociation.class);
+            startActivity(intent);
             finish();
         });
     }
