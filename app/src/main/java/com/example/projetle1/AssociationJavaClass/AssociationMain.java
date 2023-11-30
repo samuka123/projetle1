@@ -3,6 +3,7 @@ package com.example.projetle1.AssociationJavaClass;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -49,10 +50,13 @@ public class AssociationMain extends AppCompatActivity{
         });*/
 
         //Un appuie sur le bouton ADD ouvre la fenetre de creation d association
-        aAdd.setOnClickListener(v -> {
-            Intent intent  = new Intent(getApplicationContext(), CreateAssociation.class);
-            startActivity(intent);
-            finish();
+        aAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CreateAssociation.class);
+                startActivity(intent);
+                finish();
+            }
         });
     }
 

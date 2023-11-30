@@ -3,7 +3,9 @@ package com.example.projetle1.AssociationJavaClass;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,11 +16,11 @@ import com.example.projetle1.R;
 
 public class CreateAssociation extends AppCompatActivity {
 
-    private Button aCloseButton;
-    private Button aButtonChooseImage;
-    private Button aButtonUpload;
+     ImageButton aCloseButton;
+     Button aButtonChooseImage;
+     Button aButtonUpload;
 
-    private AssociationItem aAssociationObject;
+     AssociationItem aAssociationObject;
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
@@ -31,31 +33,36 @@ public class CreateAssociation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_association_list);
+        setContentView(R.layout.activity_create_association);
 
-        this.aAssociationObject= new AssociationItem();
+        aAssociationObject= new AssociationItem();
 
-        this.aCloseButton= findViewById(R.id.association_close_button);
-        this.aButtonChooseImage = findViewById(R.id.button_add_association_image);
+        aCloseButton= findViewById(R.id.association_close_button);
+        aButtonChooseImage = findViewById(R.id.button_add_association_image);
+        aAddImage= findViewById(R.id.add_association_imageview);
+        aAddName= findViewById(R.id.add_association_name);
 
-        this.aAddImage= findViewById(R.id.add_association_imageview);
-        this.aAddName= findViewById(R.id.add_association_name);
-        this.aAddDescription= findViewById(R.id.add_association_description);
-        this.aAddUrl= findViewById(R.id.add_association_url);
+        aButtonUpload = findViewById(R.id.add_association_upload);
 
-        aCloseButton.setOnClickListener(v -> {
-            Intent nextActivity = new Intent(getApplicationContext(), AssociationMain.class);
-            startActivity(nextActivity);
-            finish();
+        aAddDescription= findViewById(R.id.add_association_description);
+        aAddUrl= findViewById(R.id.add_association_url);
+
+
+        aCloseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextActivity = new Intent(getApplicationContext(), AssociationMain.class);
+                startActivity(nextActivity);
+                finish();
+            }
         });
 
-        aButtonChooseImage.setOnClickListener(v -> {
+
+        //aButtonChooseImage.setOnClickListener(v -> {
             //openGallery();
-        });
+        //});
 
-        aButtonUpload.setOnClickListener(v -> {
-            appToDatabase();
-        });
+        aButtonUpload.setOnClickListener(v -> appToDatabase());
     }
 
     private void openGallery(){
@@ -97,11 +104,11 @@ public class CreateAssociation extends AppCompatActivity {
             this.aAddUrl.setText("");
             this.aAddImage.setImageResource(R.drawable.item_default);
 
-            Toast.makeText(CreateAssociation.this, "L\'association a ete cree", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CreateAssociation.this, "L'association a ete cree", Toast.LENGTH_SHORT).show();
         }
         else{
             Toast.makeText(CreateAssociation.this, "Les champs \"Nom de votre association\" et \"Courte description\" doivent etre remplies", Toast.LENGTH_SHORT).show();
-            return;
+
         }
     }
 }
