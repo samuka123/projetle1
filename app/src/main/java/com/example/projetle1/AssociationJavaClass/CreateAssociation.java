@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,11 +16,11 @@ import com.example.projetle1.R;
 
 public class CreateAssociation extends AppCompatActivity {
 
-    private Button aCloseButton;
-    private Button aButtonChooseImage;
-    private Button aButtonUpload;
+     ImageButton aCloseButton;
+     Button aButtonChooseImage;
+     Button aButtonUpload;
 
-    private AssociationItem aAssociationObject;
+     AssociationItem aAssociationObject;
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
@@ -35,6 +36,8 @@ public class CreateAssociation extends AppCompatActivity {
         setContentView(R.layout.activity_create_association);
 
         aAssociationObject= new AssociationItem();
+
+        this.aAssociationObject= new AssociationItem();
 
         aCloseButton= findViewById(R.id.association_close_button);
         aButtonChooseImage = findViewById(R.id.button_add_association_image);
@@ -102,11 +105,11 @@ public class CreateAssociation extends AppCompatActivity {
             this.aAddUrl.setText("");
             this.aAddImage.setImageResource(R.drawable.item_default);
 
-            Toast.makeText(CreateAssociation.this, "L'association a ete cree", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CreateAssociation.this, "L\'association a ete cree", Toast.LENGTH_SHORT).show();
         }
         else{
             Toast.makeText(CreateAssociation.this, "Les champs \"Nom de votre association\" et \"Courte description\" doivent etre remplies", Toast.LENGTH_SHORT).show();
-
+            return;
         }
     }
 }
