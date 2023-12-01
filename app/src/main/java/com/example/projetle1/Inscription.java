@@ -19,13 +19,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Inscription extends AppCompatActivity {
-
     EditText editTextEmail, editTextmdp, editTextmdpConfirmation, editTextNom, editTextPrenom;
     Button buttonInscription;
     FirebaseAuth mAuth;
@@ -36,12 +36,13 @@ public class Inscription extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), Inscription.class);
+        if (currentUser != null ) {
+            Intent intent = new Intent(getApplicationContext(), Connexion.class);
             startActivity(intent);
             finish();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,21 +73,21 @@ public class Inscription extends AppCompatActivity {
         });
     }
 
-    private void InscriptionForm(){
-        String email, mdp,mdpconfirmation, nom, prenom;
+    private void InscriptionForm() {
+        String email, mdp, mdpconfirmation, nom, prenom;
         email = String.valueOf(editTextEmail.getText());
         mdp = String.valueOf(editTextmdp.getText());
         mdpconfirmation = String.valueOf(editTextmdpConfirmation.getText());
         nom = String.valueOf(editTextNom.getText());
         prenom = String.valueOf(editTextPrenom.getText());
 
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(Inscription.this, "Email", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(nom) || TextUtils.isEmpty(prenom)) {
+            Toast.makeText(Inscription.this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (mdp.length() < 6) {
-            editTextmdp.setError("Le mot de passe doit avoir plus de 6 caracteres");
+            editTextmdp.setError("Le mot de passe doit avoir plus de 6 caractères");
             editTextmdp.requestFocus();
             return;
         }
@@ -102,53 +103,49 @@ public class Inscription extends AppCompatActivity {
             return;
         }
 
-        if (!mdp.equals(mdpconfirmation)){
+        if (!mdp.equals(mdpconfirmation)) {
             editTextmdpConfirmation.setError("Le mot de passe n'est pas identique");
             editTextmdpConfirmation.requestFocus();
             return;
         }
 
-        Map<String,Object> utilisateurInfo = new HashMap<>();
-        utilisateurInfo.put("nom",nom);
-        utilisateurInfo.put("prenom",prenom);
-
-
-        // Vérification connexion à la db
-        if (mDb == null) {
-            Log.e("Inscription", "L'objet db est null !");
-            return; // Exécution stop si db est null
-        }
-
-
-        mDb.collection("utilisateurInfo").document("1")
-                .set(utilisateurInfo)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                                       Toast.makeText(getApplicationContext(), "L'utilisateur est enregistré ",
-                                Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), Connexion.class));
-                        finish();
-                    }
-                });
-
-        mAuth.createUserWithEmailAndPassword(email,mdp)
+        mAuth.createUserWithEmailAndPassword(email, mdp)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(Inscription.this, "Compte crée.",
-                                    Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), Connexion.class);
-                            startActivity(intent);
-                            finish();
+                            // Utilisateur créé avec succès
+                            createUserData(nom, prenom, email);
                         } else {
-                            Toast.makeText(Inscription.this, "Inscription échoué.",
+                            Toast.makeText(Inscription.this, "Inscription échouée.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
+    private void createUserData(String nom, String prenom, String email) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            String utilisateurID = user.getUid();
 
+            Map<String, Object> utilisateurInfo = new HashMap<>();
+            utilisateurInfo.put("nom", nom);
+            utilisateurInfo.put("prenom", prenom);
+            utilisateurInfo.put("email", email);
+            DocumentReference userRef = mDb.collection("utilisateurInfo").document(utilisateurID);
+            userRef.set(utilisateurInfo)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getApplicationContext(), "L'utilisateur est enregistré",
+                                    Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), Connexion.class));
+                            finish();
+                        }
+                    });
+        } else {
+            Log.e("Inscription", "Utilisateur introuvable après la création.");
+        }
+    }
 }
