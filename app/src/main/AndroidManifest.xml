@@ -13,9 +13,6 @@
         android:theme="@style/Theme.HelloWorld">
         <activity
             android:name=".Profil"
-            android:exported="false" />
-        <activity
-            android:name=".Inscription"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
@@ -28,10 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Inscription"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AssociationJavaClass.AssociationMain" />
-        <activity android:name=".AssociationJavaClass.CreateAssociation"/>
-
+        <activity android:name=".AssociationJavaClass.CreateAssociation" />
     </application>
 
 </manifest>

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bb"
     tools:context=".Profil">
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/img_profil"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -17,17 +19,22 @@
         app:civ_border_color="#FF000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:contentDescription="image de profil " />
 
     <EditText
         android:id="@+id/prenom_profil"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="13dp"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_person_24"
+        android:autofillHints="prenom"
         android:drawablePadding="10dp"
-        android:elevation="3dp"
+        android:drawableStart="@drawable/baseline_person_24"
+        android:hint="Votre prénom"
+        android:inputType="textPersonName"
+        android:padding="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_profil"
@@ -35,13 +42,15 @@
 
     <EditText
         android:id="@+id/nom_profil"
+        android:hint="Votre nom"
+        android:autofillHints="nom"
+        android:inputType="textPersonName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="13dp"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawableStart="@drawable/baseline_person_24"
         android:drawablePadding="10dp"
-        android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prenom_profil"
@@ -50,13 +59,15 @@
 
     <EditText
         android:id="@+id/email_profil"
+        android:hint="Votre Email"
+        android:autofillHints="email"
+        android:inputType="textEmailAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="13dp"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawableStart="@drawable/baseline_email_24"
         android:drawablePadding="10dp"
-        android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nom_profil"
@@ -64,13 +75,15 @@
 
     <EditText
         android:id="@+id/adresse_profil"
+        android:hint="Votre adresse"
+        android:autofillHints="adressz"
+        android:inputType="textPostalAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="13dp"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/baseline_add_location_24"
+        android:drawableStart="@drawable/baseline_add_location_24"
         android:drawablePadding="10dp"
-        android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_profil"
@@ -82,15 +95,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="#2196F3"
+        android:drawablePadding="10dp"
+
         android:padding="13dp"
         android:text="@string/Update"
-        android:elevation="3dp"
-        android:drawablePadding="10dp"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adresse_profil"
         app:layout_constraintWidth_percent=".5"
-        app:layout_constraintHorizontal_bias="0.5"
-    />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
